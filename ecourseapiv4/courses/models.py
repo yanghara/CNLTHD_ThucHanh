@@ -43,7 +43,7 @@ class Lesson(BaseModel):
     content = RichTextField()
     image = CloudinaryField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, null=True, blank=True)
     class Meta:
         unique_together = ('subject', 'course')
 
